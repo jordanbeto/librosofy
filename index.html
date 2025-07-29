@@ -2,52 +2,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Para ti</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-
-        body {
-            background-image: url('background.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: #fff;
-            font-family: 'Georgia', serif;
-            text-align: center;
-            padding-top: 20vh;
-            margin: 0;
-        }
-
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px #000;
-        }
-
-        h2 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.5em;
-            margin-top: 10px;
-            color: #ffe;
-            text-shadow: 2px 2px 5px #000;
-        }
-
-        iframe {
-            display: none;
-        }
-    </style>
-    <script>
-        setTimeout(function() {
-            window.location.href = "https://www.facebook.com/";
-        }, 220000); // Redirige después de 3 minutos y 40 segundos
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entre olas y pantallas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    img {
+      max-width: 80%%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 2em;
+      margin: 30px 0 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 10px 0 30px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-    <h1>Solo escucha... lo que viene después es para ti.</h1>
-    <h2>Entre olas y pantallas...</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YQHsXMglC9A?autoplay=1"
-        title="Ryan O'Shaughnessy - No Name" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <img src="portada_ecuador.png" alt="Portada del libro" />
+  <h1>Entre olas y pantallas</h1>
+  <p>Reproduciendo una canción especial... cuando termine, tu libro se abrirá solo 💌</p>
+
+  <audio id="bg-music" autoplay>
+    <source src="no_name.mp3" type="audio/mpeg" />
+    Tu navegador no admite audio HTML.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    audio.onended = function () {
+      window.open("https://www.canva.com/design/DAGuiBbz-To/pl-DtiMLI_a6HPWgFg6LQw/view", "_blank");
+    };
+  </script>
 </body>
 </html>
