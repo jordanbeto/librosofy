@@ -41,6 +41,7 @@
       border-radius: 10px;
       cursor: pointer;
       font-weight: bold;
+      display: none;
     }
     button:hover {
       background-color: #fff;
@@ -53,8 +54,9 @@
 <body>
   <div class="content">
     <h1>Entre olas y pantallas</h1>
-    <p>Presiona el botón para reproducir una canción especial.<br>Cuando termine, se abrirá tu libro automáticamente 💌</p>
-    <button onclick="iniciar()">Reproducir canción</button>
+    <p>Presiona el botón para escuchar una canción especial...<br>A mitad de camino aparecerá tu regalo 🎁</p>
+    <button id="startBtn" onclick="iniciar()">Reproducir canción</button>
+    <button id="giftBtn" onclick="abrirLibro()">Puedes terminar de escuchar la canción o presionar aquí y disfrutar de tu regalo, amor. ¡Feliz cumpleaños! 🎉</button>
     <audio id="bg-music">
       <source src="no_name.mp3" type="audio/mpeg" />
       Tu navegador no admite audio HTML.
@@ -62,12 +64,20 @@
   </div>
 
   <script>
+    document.getElementById("startBtn").style.display = "inline-block";
+
     function iniciar() {
       const audio = document.getElementById('bg-music');
       audio.play();
-      audio.onended = function () {
-        window.open("https://www.canva.com/design/DAGuiBbz-To/pl-DtiMLI_a6HPWgFg6LQw/view", "_blank");
-      };
+
+      // Mostrar botón del regalo después de 85 segundos (mitad de la canción)
+      setTimeout(() => {
+        document.getElementById("giftBtn").style.display = "inline-block";
+      }, 85000);
+    }
+
+    function abrirLibro() {
+      window.open("https://www.canva.com/design/DAGuiBbz-To/pl-DtiMLI_a6HPWgFg6LQw/view", "_blank");
     }
   </script>
 </body>
